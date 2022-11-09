@@ -1,0 +1,16 @@
+<!-- templates/article_edit.html -->
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <h3 class="pb-4 mb-4 fst-italic border-bottom">Article edit</h3>
+    <div class="row g-5">
+        <div class="col-md-8">
+            <form action="" method="post">{% csrf_token %}
+                {{ form.as_p }}
+<!--                add crispy line from 'q' file-->
+                <button class="btn btn-info" type="submit">Update</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content%}

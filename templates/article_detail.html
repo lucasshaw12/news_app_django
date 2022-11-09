@@ -1,0 +1,21 @@
+<!-- templates/article_detail.html -->
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <h3 class="pb-4 mb-4 fst-italic border-bottom">Article detail</h3>
+    <div class="row g-5">
+        <div class="col-md-8">
+            <div class="article-entry">
+                <h2>{{object.title}}</h2>
+                <p>by {{object.author}} | {{object.date}}</p>
+                <p>{{object.body}}</p>
+            </div>
+            <p>
+                <a href="{% url 'article_edit' article.pk %}">Edit</a> |
+                <a href="{% url 'article_delete' article.pk %}">Delete</a>
+            </p>
+            <p>Back to <a href="{% url 'article_list' %}">all articles</a>.</p>
+        </div>
+    </div>
+</div>
+{% endblock content%}

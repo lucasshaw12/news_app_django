@@ -1,0 +1,15 @@
+<!-- templates/article_new.html -->
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <h3 class="pb-4 mb-4 fst-italic border-bottom">Create new article</h3>
+    <div class="row g-5">
+        <div class="col-md-8">
+            <form action="" method="post">{% csrf_token %}
+                {{ form.as_p }}
+                <button class="btn btn-success" type="submit">Save</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}
