@@ -12,10 +12,16 @@
                     <span class="font-weight-bold">{{article.title}}</span> &#8211;
                     <span class="text-muted">{{article.author}} | {{article.date}}</span>
                 </div>
-                <div class="card-body">{{article.body}}</div>
-                <div class="card-footer text-center text-muted">
+                <div class="card-body">
+                    {{ article.body }}
+                    <br/>
                     <a href="{% url 'article_edit' article.pk %}">Edit</a> |
                     <a href="{% url 'article_delete' article.pk %}">Delete</a>
+                </div>
+                <div class="card-footer text-muted">
+                    {% for comment in article.comment_set.all %}
+                    <span>by {{ comment.author }} &#8211; {{ comment }}</span>
+                    {% endfor %}
                 </div>
             </div>
             <br/>

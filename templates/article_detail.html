@@ -1,5 +1,6 @@
 <!-- templates/article_detail.html -->
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 {% block content %}
 <div class="container">
     <h3 class="pb-4 mb-4 fst-italic border-bottom">Article detail</h3>
@@ -14,6 +15,17 @@
                 <a href="{% url 'article_edit' article.pk %}">Edit</a> |
                 <a href="{% url 'article_delete' article.pk %}">Delete</a>
             </p>
+            <h5>Comments</h5>
+            {% for comment in article.comment_set.all %}
+            <p>{{ comment.author }} &#8211; {{ comment }}</p>
+            {% endfor %}
+            <br/>
+            <h5>Add a comment</h5>
+            <form action="" method="post"> {% csrf_token %}
+                {{ form|crispy }}
+                <button class="btn btn-primary" type="submit">Save</button>
+            </form>
+            <br/>
             <p>Back to <a href="{% url 'article_list' %}">all articles</a>.</p>
         </div>
     </div>

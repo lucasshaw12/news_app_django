@@ -1,12 +1,13 @@
 <!-- /templates/base.html -->
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 
 {% block content %}
 <div class="container">
     <main class="w-100 m-auto text-center">
         <form method="post"> {% csrf_token %}
             <h1 class="h3 mb-3 fw-normal">Please log in</h1>
-            {{ form.as_p }}
+            {{ form|crispy }}
             <button class="btn btn-primary" type="submit">Log in</button>
         </form>
     </main>

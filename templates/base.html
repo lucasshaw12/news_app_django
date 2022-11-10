@@ -24,7 +24,13 @@
 <!--                    add post new from q file here-->
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="{% url 'article_new' %}">Add new</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="{% url 'logout' %}">Hi {{ user.username }}, log out?</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'password_change' %}">Change password</a>
                 </li>
                 {% else %}
                 <li class="nav-item">
@@ -33,9 +39,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'signup' %}">Sign up</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'article_new' %}">Add new</a>
-                </li>
+
             </ul>
         </nav>
             {% endif %}
