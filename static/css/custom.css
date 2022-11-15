@@ -1,0 +1,49 @@
+/* static/css/base.css */
+
+/* fundamental styles */
+.body {
+
+}
+
+.btn {
+    background-color: #3da9fc;
+    color: #fffffe;
+}
+
+.container-fluid {
+    background-color: #fffffe;
+}
+
+.container-fluid ul{
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+h1{
+    color: #094067;
+}
+
+a{
+    color: #3da9fc;
+}
+
+p {
+    color: #5f6c7b;
+}
+
+.card {
+    border-top: none;
+}
+
+.card-header {
+    color: #3da9fc;
+    background-color: #90b4ce;
+}
+
+.card-header span{
+    color: #fffffe;
+}
+
+.card-header a{
+    color: #fffffe;
+}

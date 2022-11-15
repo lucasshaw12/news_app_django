@@ -1,3 +1,0 @@
-<a class="nav-link" href="{% url 'post_new' %}">New blog post</a>
-
-{{ form|crispy }}

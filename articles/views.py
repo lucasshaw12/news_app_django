@@ -57,6 +57,7 @@ class CommentPost(SingleObjectMixin, FormView):
         article = self.get_object()
         return reverse("article_detail", kwargs={"pk": article.pk})
 
+
 class ArticleDetailView(LoginRequiredMixin, View):
     def get(self, request, *args, **kwargs):
         view = CommentGet.as_view()

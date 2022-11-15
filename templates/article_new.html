@@ -1,12 +1,13 @@
 <!-- templates/article_new.html -->
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 {% block content %}
 <div class="container">
-    <h3 class="pb-4 mb-4 fst-italic border-bottom">Create new article</h3>
-    <div class="row g-5">
-        <div class="col-md-8">
+    <div class="col-8 mx-auto">
+        <h3 class="pb-4 mb-4 fst-italic border-bottom">Create new article</h3>
+        <div class="bg-light p-4 p-md-5 border rounded-3">
             <form action="" method="post">{% csrf_token %}
-                {{ form.as_p }}
+                {{ form|crispy }}
                 <button class="btn btn-success" type="submit">Save</button>
             </form>
         </div>

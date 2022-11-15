@@ -4,12 +4,21 @@
 
 {% block content %}
 <div class="container">
-    <main class="w-100 m-auto text-center">
+    <div class="col-8 mx-auto text-center">
         <form method="post"> {% csrf_token %}
-            <h1 class="h3 mb-3 fw-normal">Please log in</h1>
-            {{ form|crispy }}
-            <button class="btn btn-primary" type="submit">Log in</button>
+            <h3 class="h3 mb-3 fw-normal">Please log in</h3>
+            <hr/>
+            <div class="bg-light p-4 p-md-5 border rounded-3">
+                {{ form|crispy }}
+                <br/>
+                <button class="btn btn-primary" type="submit">Log in</button>
+                <span> or, </span>
+                <button class="btn btn-primary" type="submit">
+                    <a href="{% url 'signup' %}" class="text-decoration-none text-white">sign up</a>
+                </button>
+
+            </div>
         </form>
-    </main>
+    </div>
 </div>
 {% endblock content %}

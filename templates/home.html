@@ -1,13 +1,24 @@
 <!-- posts/templates/home.html -->
 {% extends "base.html" %}
-
 {% block content %}
-<div class="container">
-    <h3 class="pb-4 mb-4 fst-italic border-bottom">Welcome</h3>
-    <div class="row g-5">
-        <div class="col-md-8">
+<body class="d-flex h-100 text-center">
+
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <main class="px-3">
+        <h1 style="text-transform:uppercase;">Get the scoop</h1>
+        <p class="lead">Own your news. Write, share and read - a place for independent journalists to uncover the
+            truth.</p>
+        <p class="lead">
+            {% if user.is_authenticated %}
             <a class="btn btn-primary" href="{% url 'article_list' %}">View all articles</a>
-        </div>
-    </div>
+            {% else %}
+            <a class="btn btn-primary" href="{% url 'login' %}">Sign up</a>
+            <a class="btn btn-primary" href="{% url 'signup' %}">Log in</a>
+        </p>
+        {% endif %}
+    </main>
 </div>
+
+
+</body>
 {% endblock content %}
