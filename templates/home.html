@@ -12,8 +12,10 @@
             {% if user.is_authenticated %}
             <a class="btn btn-primary" href="{% url 'article_list' %}">View all articles</a>
             {% else %}
-            <a class="btn btn-primary" href="{% url 'login' %}">Sign up</a>
-            <a class="btn btn-primary" href="{% url 'signup' %}">Log in</a>
+        <div class="d-grid gap-2 col-2 mx-auto">
+            <a class="btn btn-primary" href="{% url 'login' %}">Log in</a>
+            <a class="btn btn-primary" href="{% url 'signup' %}">Sign up</a>
+        </div>
         </p>
         {% endif %}
     </main>

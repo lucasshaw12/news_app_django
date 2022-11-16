@@ -1,22 +1,8 @@
 /* static/css/base.css */
 
 /* fundamental styles */
-.body {
-
-}
-
-.btn {
-    background-color: #3da9fc;
-    color: #fffffe;
-}
-
-.container-fluid {
+body {
     background-color: #fffffe;
-}
-
-.container-fluid ul{
-    text-transform: uppercase;
-    font-weight: bold;
 }
 
 h1{
@@ -31,6 +17,45 @@ p {
     color: #5f6c7b;
 }
 
+.btn {
+    border: none;
+}
+
+/* TOP NAV BAR */
+
+.container-fluid ul a{
+    color: #094067;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+.container-fluid ul a:hover{
+    color: black;
+}
+
+/* END TOP NAV BAR */
+
+/* LANDING PAGE */
+
+div.cover-container main{
+    margin-top: 100px;
+}
+
+div.cover-container p.lead{
+    margin-top: 10px;
+}
+
+div.cover-container p.lead .btn{
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-top: 20px;
+    background-color: #3da9fc;
+    color: #fffffe;
+}
+
+/* END LANDING PAGE */
+
+/* ARTICLES LIST */
 .card {
     border-top: none;
 }
@@ -47,3 +72,19 @@ p {
 .card-header a{
     color: #fffffe;
 }
+
+.card-body a{
+    text-decoration: none;
+}
+
+/* END ARTICLES LIST */
+
+/* FORMS */
+
+.container form .btn{
+    background-color: #3da9fc;
+    color: #fffffe;
+    border: none;
+}
+
+/* END FORMS */
