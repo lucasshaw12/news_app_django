@@ -14,13 +14,19 @@
             <div class="card-body">
                 {{ article.body }}
                 <br/>
+                {% if user.is_authenticated and user == article.author or user.is_superuser %}
                 <a href="{% url 'article_edit' article.pk %}">edit</a> |
                 <a href="{% url 'article_delete' article.pk %}">delete</a>
+                {% endif %}
             </div>
             <div class="card-footer">
+                {% if article.comment_set.all %}
+                <h6>Comments:</h6>
                 {% for comment in article.comment_set.all %}
-                <p>{{ comment.author }} &#8211; {{ comment }}</p>
+                <span>{{ comment.author }}&#58; {{ comment }}</span>
+                <hr/>
                 {% endfor %}
+                {% endif %}
             </div>
         </div>
         <br/>

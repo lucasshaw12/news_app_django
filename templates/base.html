@@ -15,16 +15,35 @@
 <body>
 <div class="container-fluid">
     <header class="mb-3 p-3">
+                <a class="" href="{% url 'home' %}">
+<!--                    Home-->
+                    <img class="home-link" src="{% static '../static/icons/home-svgrepo-com.svg' %}" height="30">
+                </a>
         <ul class="nav col-lg-auto justify-content-center">
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'home' %}">Home</a>
-            </li>
+<!--            <li class="nav-item">-->
+<!--                <a class="nav-link" href="{% url 'home' %}">-->
+<!--&lt;!&ndash;                    Home&ndash;&gt;-->
+<!--                    <img class="home-link" src="{% static '../static/icons/home-svgrepo-com.svg' %}" height="30">-->
+<!--                </a>-->
+<!--            </li>-->
             {% if user.is_authenticated %}
             <li class="nav-item ">
-                <a class="nav-link" href="{% url 'article_new' %}">Add new</a>
+                <a class="nav-link" href="{% url 'article_new' %}">
+                    Add new
+                    <img src="{% static '../static/icons/pencil-svgrepo-com.svg' %}" height="15">
+                </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'logout' %}">Hi {{ user.username }}, log out?</a>
+                <a class="nav-link" href="{% url 'article_list' %}">
+                    articles
+                    <img src="{% static '../static/icons/news-svgrepo-com.svg' %}" height="17">
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'logout' %}">
+                    Hi {{ user.username }}, log out?
+                    <img src="{% static '../static/icons/exit-svgrepo-com.svg' %}" height="15">
+                </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'password_change' %}">Change password</a>
