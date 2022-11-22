@@ -2,6 +2,8 @@
 {% extends 'base.html' %}
 {% load crispy_forms_tags %}
 {% block content %}
+<body class="d-flex h-100">
+
 <div class="container">
     <div class="col-8 mx-auto">
         <h3 class="pb-4 mb-4 fst-italic border-bottom">Article detail</h3>
@@ -21,11 +23,13 @@
         </p>
         {% endif %}
         <br/>
+        {% if article.comment_set.all %}
         <hr/>
         <h5>Comments</h5>
         {% for comment in article.comment_set.all %}
         <p>{{ comment.author }} &#8211; {{ comment }}</p>
         {% endfor %}
+        {% endif %}
         <br/>
         <hr/>
         <h5>Add a comment</h5>
@@ -37,4 +41,5 @@
         <p>Back to <a href="{% url 'article_list' %}">all articles</a></p>
     </div>
 </div>
+</body>
 {% endblock content%}

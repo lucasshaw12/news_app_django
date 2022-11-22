@@ -3,6 +3,7 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
+<body class="d-flex h-100 text-center">
 <div class="container">
     <div class="col-8 mx-auto text-center">
         <form method="post"> {% csrf_token %}
@@ -14,11 +15,12 @@
                 <button class="btn btn-primary" type="submit">Log in</button>
                 <span> or, </span>
                 <button class="btn btn-primary" type="submit">
-                    <a href="{% url 'signup' %}" class="text-decoration-none text-white">sign up</a>
+                    <a href="{% url 'signup' %}" class="text-decoration-none text-white">Sign up</a>
                 </button>
-
+                <p><a href="{% url 'password_reset' %}" class="text-decoration-none">Forgot password?</a></p>
             </div>
         </form>
     </div>
 </div>
+</body>
 {% endblock content %}

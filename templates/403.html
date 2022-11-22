@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}Error{% endblock title %}
+{% block content %}
+<body class="d-flex h-100 text-center">
+
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <h1>Error 403. <br/> Whoops, you aren't permitted to do this.</h1>
+    <p class="lead">
+        {% if user.is_authenticated %}
+        <a class="btn btn-primary" href="{% url 'article_list' %}">Back to articles</a>
+    </p>
+    {% endif %}
+</div>
+</body>
+{% endblock content %}

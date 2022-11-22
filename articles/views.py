@@ -15,6 +15,7 @@ class ArticleListView(LoginRequiredMixin, ListView):
     template_name = "article_list.html"
 
 
+
 class ArticleCreateView(LoginRequiredMixin, CreateView):
     model = Article
     template_name = "article_new.html"
@@ -50,6 +51,7 @@ class CommentPost(SingleObjectMixin, FormView):
     def form_valid(self, form):
         comment = form.save(commit=False)
         comment.article = self.object
+        self.author = self.request.user
         comment.save()
         return super().form_valid(form)
 
@@ -78,7 +80,7 @@ class ArticleUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
     def test_func(self):
         obj = self.get_object()
-        return obj.author == self.request.user
+        return obj.author == self.request.user, self.request.user.is_superuser
 
 
 class ArticleDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):

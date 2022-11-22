@@ -123,10 +123,16 @@ div.cover-container p.lead .btn:hover {
 
 .card-header a{
     color: #fffffe;
+    font-weight: bold;
 }
 
 .card-header span a{
     font-size: 20px;
+    font-style: italic;
+}
+
+.card-body:first-letter, .article-entry p:first-letter {
+    text-transform: capitalize;
 }
 
 .card-body a{
