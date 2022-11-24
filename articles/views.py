@@ -4,6 +4,7 @@ from django.views.generic.edit import UpdateView, DeleteView, CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic.detail import SingleObjectMixin
 from django.views import View
+from django.db.models import Q
 from django.urls import reverse_lazy, reverse
 from .models import Article
 from .forms import CommentForm
@@ -13,7 +14,6 @@ from .forms import CommentForm
 class ArticleListView(LoginRequiredMixin, ListView):
     model = Article
     template_name = "article_list.html"
-
 
 
 class ArticleCreateView(LoginRequiredMixin, CreateView):
@@ -44,13 +44,9 @@ class CommentPost(SingleObjectMixin, FormView):
     form_class = CommentForm
     template_name = "article_detail.html"
 
-    def post(self, request, *args, **kwargs):
-        self.object = self.get_object()
-        return super().post(request, *args, **kwargs)
-
     def form_valid(self, form):
         comment = form.save(commit=False)
-        comment.article = self.object
+        comment.article = self.get_object()
         self.author = self.request.user
         comment.save()
         return super().form_valid(form)
@@ -91,3 +87,21 @@ class ArticleDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     def test_func(self):
         obj = self.get_object()
         return obj.author == self.request.user
+
+
+class SearchResultsView(ListView):
+    model = Article
+    template_name = 'search_results.html'
+
+    def get_queryset(self):
+        query = self.request.GET.get("q")
+        object_list = Article.objects.filter(
+            Q(title__icontains=query) | Q(date__icontains=query) | Q(author__username__icontains=query)
+        )
+        return object_list
+
+    def get_context_data(self, **kwargs):
+        context = super(SearchResultsView, self).get_context_data(**kwargs)
+        context['query'] = self.request.GET.get('q')
+        return context
+

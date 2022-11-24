@@ -15,9 +15,24 @@
 <body>
 <div class="container-fluid">
     <header class="mb-3 p-3">
-        <a class="" href="{% url 'home' %}">
-            <img class="home-link" src="{% static '../static/icons/home-svgrepo-com.svg' %}" height="30">
+        <a class="home-link" href="{% url 'home' %}" title="Home">
+            <span class="home-text">my journal</span>
+            <img  src="{% static '../static/icons/home-svgrepo-com.svg' %}">
         </a>
+        {% if user.is_authenticated %}
+        <form class="form-inline my-4 my-md-4 col-4 mx-auto" action="{% url 'search_results' %}" method="get">
+            <div class="input-group mb-3">
+                <input name="q" type="text" class="form-control mr-sm-2" placeholder="Search title, author, date..."
+                       aria-label="search">
+                <div class="input-group-append">
+                    <button id="search" class="btn btn-outline-secondary my-sm-0" type="submit"><img class="home-link"
+                                                                                                     src="{% static '../static/icons/magnifying-glass-svgrepo-com.svg' %}"
+                                                                                                     height="30">
+                    </button>
+                </div>
+            </div>
+        </form>
+        {% endif %}
         <ul class="nav col-lg-auto justify-content-center">
             {% if user.is_authenticated %}
             <li class="nav-item ">
@@ -28,7 +43,7 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'article_list' %}">
-                    articles
+                    entries
                     <img src="{% static '../static/icons/news-svgrepo-com.svg' %}" height="17">
                 </a>
             </li>
