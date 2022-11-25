@@ -45,10 +45,9 @@ class CommentPost(SingleObjectMixin, FormView):
     template_name = "article_detail.html"
 
     def form_valid(self, form):
-        comment = form.save(commit=False)
-        comment.article = self.get_object()
-        self.author = self.request.user
-        comment.save()
+        form.instance.author = self.request.user
+        form.instance.article = self.get_object()
+        form.save()
         return super().form_valid(form)
 
     def get_success_url(self):
