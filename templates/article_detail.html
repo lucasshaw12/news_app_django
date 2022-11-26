@@ -22,6 +22,12 @@
             </button>
         </p>
         {% endif %}
+        {% if article.tags.all %}
+        <span class="small tag">Tags&#58;</span>
+        {% for tag in article.tags.all %}
+        <a class="tags" href="{% url 'article_list' tag.slug %}">{{ tag.name }}</a>
+        {% endfor %}
+        {% endif %}
         <br/>
         {% if article.comment_set.all %}
         <hr/>

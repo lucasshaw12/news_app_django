@@ -8,10 +8,18 @@ from django.db.models import Q
 from django.urls import reverse_lazy, reverse
 from .models import Article
 from .forms import CommentForm
+from taggit.models import Tag
 
 
 # Create your views here.
-class ArticleListView(LoginRequiredMixin, ListView):
+class TagMixin(object):
+    def get_context_data(self, **kwargs):
+        context = super(TagMixin, self).get_context_data(**kwargs)
+        context['tags'] = Article.tags.most_common()[:10]
+        return context
+
+
+class ArticleListView(LoginRequiredMixin, TagMixin, ListView):
     model = Article
     template_name = "article_list.html"
 
@@ -22,11 +30,21 @@ class ArticleCreateView(LoginRequiredMixin, CreateView):
     fields = (
         "title",
         "body",
+        "tags",
     )
 
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
+
+
+class TagListView(TagMixin, ListView):
+    model = Article
+    template_name = "article_list.html"
+    common_tags = Article.tags.most_common()[:4]
+
+    def get_queryset(self):
+        return Article.objects.filter(tags__slug=self.kwargs.get('tag_slug'))
 
 
 class CommentGet(LoginRequiredMixin, DetailView):
@@ -69,7 +87,8 @@ class ArticleUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Article
     fields = (
         "title",
-        "body"
+        "body",
+        "tags",
     )
     template_name = "article_edit.html"
 
@@ -103,4 +122,3 @@ class SearchResultsView(ListView):
         context = super(SearchResultsView, self).get_context_data(**kwargs)
         context['query'] = self.request.GET.get('q')
         return context
-

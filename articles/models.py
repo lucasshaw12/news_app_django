@@ -1,12 +1,14 @@
 from django.db import models
 from django.conf import settings
 from django.urls import reverse
+from taggit.managers import TaggableManager
 
 # Create your models here.
 class Article(models.Model):
     title = models.CharField(max_length=225)
     body = models.TextField()
     date = models.DateTimeField(auto_now_add=True)
+    tags = TaggableManager()
     author = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,

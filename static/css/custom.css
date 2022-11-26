@@ -154,12 +154,25 @@ div.cover-container p.lead .btn:hover {
     text-decoration: none;
 }
 
+.card-body span {
+    color: #90b4ce;
+}
+
 .card-footer{
     padding-top: 15px;
     font-size: 14px ;
 }
 
 .card-footer h6{ /* comments */
+    color: #90b4ce;
+}
+
+a.tags {
+    color: #ef4565;
+    text-decoration: none;
+}
+
+span.tag {
     color: #90b4ce;
 }
 
