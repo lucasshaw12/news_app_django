@@ -1,6 +1,6 @@
 # articles/urls.py
 from django.urls import path
-from .views import ArticleListView, ArticleDetailView, ArticleUpdateView, ArticleDeleteView, ArticleCreateView, SearchResultsView, TagListView
+from .views import ArticleListView, ArticleDetailView, ArticleUpdateView, ArticleDeleteView, ArticleCreateView, SearchResultsView, TagListView, MyPostsView
 
 urlpatterns = [
     path("search/", SearchResultsView.as_view(), name="search_results"),
@@ -10,4 +10,5 @@ urlpatterns = [
     path("new/", ArticleCreateView.as_view(), name="article_new"),
     path("", ArticleListView.as_view(), name="article_list"),
     path("tags/<slug:tag_slug>/", TagListView.as_view(), name="article_list"),
+    path("myposts/", MyPostsView.as_view(), name="my_posts")
 ]

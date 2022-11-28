@@ -5,7 +5,7 @@
 <body class="d-flex h-100">
 
 <div class="container text-center">
-    <div class="col-8 mx-auto">
+    <div class="col-10 mx-auto">
         <h3 class="pb-4 mb-4 fst-italic border-bottom">Edit Article "{{article.title}}"</h3>
         <form action="" method="post">{% csrf_token %}
             {{ form|crispy }}

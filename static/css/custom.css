@@ -16,6 +16,12 @@ a{
 p {
     color: #5f6c7b;
 }
+#search-field::placeholder {
+    color:#90b4ce;
+    font-size:13px;
+    font-style: italic;
+}
+
 
 button#search {
     border: solid .5px rgb(118, 118, 118);
@@ -45,6 +51,10 @@ a.home-link:hover {
     color: #3da9fc;
 }
 
+.dropdown-toggle::after{
+    vertical-align: 1px;
+}
+
 span.home-text {
     text-decoration: none;
 }
@@ -56,6 +66,12 @@ span.home-text {
     text-decoration: none;
 }
 
+/*
+.header-band {
+    background-color: red;
+}
+*/
+
 .container-fluid ul a{
     color: #094067;
     text-transform: uppercase;
@@ -63,10 +79,10 @@ span.home-text {
 }
 
 .container-fluid ul a:hover{
-    color: black;
+    color: #90b4ce;
 }
 
-.container-fluid ul a::after{
+/*.container-fluid ul a::after{
     display: block;
     position: relative;
     content: '';
@@ -77,14 +93,16 @@ span.home-text {
 
 .container-fluid ul a:hover::after {
     transform: scaleX(1);
-}
+}*/
 
 .container-fluid ul a img{
     position: relative;
     top: -3px;
 }
 
-
+.dropdown-item:hover{
+    color: #90b4ce;
+}
 
 /* END TOP NAV BAR */
 
@@ -123,6 +141,7 @@ div.cover-container p.lead .btn:hover {
 /* END LANDING PAGE */
 
 /* ARTICLES LIST */
+
 .card {
     border-top: none;
 }
@@ -154,8 +173,8 @@ div.cover-container p.lead .btn:hover {
     text-decoration: none;
 }
 
-.card-body span {
-    color: #90b4ce;
+.card-body span, .common-tags {
+    color: #094067;
 }
 
 .card-footer{
@@ -170,6 +189,10 @@ div.cover-container p.lead .btn:hover {
 a.tags {
     color: #ef4565;
     text-decoration: none;
+}
+
+a.tags:hover {
+    color:#90b4ce ;
 }
 
 span.tag {

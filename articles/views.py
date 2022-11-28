@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from django.views.generic import ListView, DetailView, FormView
 from django.views.generic.edit import UpdateView, DeleteView, CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
@@ -8,7 +7,6 @@ from django.db.models import Q
 from django.urls import reverse_lazy, reverse
 from .models import Article
 from .forms import CommentForm
-from taggit.models import Tag
 
 
 # Create your views here.
@@ -57,7 +55,7 @@ class CommentGet(LoginRequiredMixin, DetailView):
         return context
 
 
-class CommentPost(SingleObjectMixin, FormView):
+class CommentPost(LoginRequiredMixin, SingleObjectMixin, FormView):
     model = Article
     form_class = CommentForm
     template_name = "article_detail.html"
@@ -107,7 +105,7 @@ class ArticleDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         return obj.author == self.request.user
 
 
-class SearchResultsView(ListView):
+class SearchResultsView(LoginRequiredMixin, ListView):
     model = Article
     template_name = 'search_results.html'
 
@@ -122,3 +120,13 @@ class SearchResultsView(ListView):
         context = super(SearchResultsView, self).get_context_data(**kwargs)
         context['query'] = self.request.GET.get('q')
         return context
+
+
+class MyPostsView(LoginRequiredMixin, ListView):
+    model = Article
+    template_name = "my_posts.html"
+
+    def get_queryset(self):
+        query = Article.objects.all()
+        object_list = query.filter(author=self.request.user)
+        return object_list

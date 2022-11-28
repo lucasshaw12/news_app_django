@@ -1,22 +1,12 @@
-<!-- templates/article_list.html -->
 {% extends 'base.html' %}
-{% block title %}Articles{% endblock title %}
+{% load crispy_forms_tags %}
 {% block content %}
 <body class="d-flex h-100">
 
 <div class="container">
     <div class="col-10 mx-auto">
-        <h3 class="h3 mb-3 fw-normal text-center">All Entries</h3>
+        <h3 class="h3 mb-3 fw-normal text-center">My entries</h3>
         <hr/>
-        <div class="row">
-            <div class="span6 small">
-                <span class="common-tags">most common:</span>
-                {% for tag in tags %}
-                <a class="tags" href="{% url 'article_list' tag.slug %}">{{ tag.name }}</a>
-                {% endfor %}
-            </div>
-        </div>
-        <br>
         {% for article in article_list reversed %}
         <div class="card">
             <div class="card-header">
@@ -55,7 +45,8 @@
         <br/>
         <br/>
         {% endfor %}
+
     </div>
 </div>
 </body>
-{% endblock content %}
+{% endblock %}
