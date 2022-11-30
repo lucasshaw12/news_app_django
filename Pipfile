@@ -1,0 +1,12 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+environs = {extras = ["django"], version = "==9.3.5"}
+
+[requires]
+python_version = "3.1"
