@@ -1,1 +1,3 @@
-web: gunicorn django_news_project.wsgi --log-file -
+web: gunicorn django_news_project.wsgi --log-file - --log-level debug
+python manage.py collectstatic --noinput
+manage.py migrate
