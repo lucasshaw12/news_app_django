@@ -143,8 +143,3 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
-
-# Configuration for Heroku
-import django_heroku
-
-django_heroku.settings(locals())
