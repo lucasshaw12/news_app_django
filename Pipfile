@@ -9,6 +9,7 @@ verify_ssl = true
 environs = {extras = ["django"], version = "==9.3.5"}
 gunicorn = "*"
 whitenoise = "*"
+django-crispy-forms = "*"
 
 [requires]
 python_version = "3.1"
