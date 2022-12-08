@@ -34,7 +34,7 @@
                 <br>
                 <br>
                 {% endif %}
-                {{ article.body|truncatechars:200 }}
+                {{ article.body|truncatechars:300 }}
                 <br/>
                 <hr/>
                 {% if user.is_authenticated and user == article.author or user.is_superuser %}

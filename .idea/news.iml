@@ -6,6 +6,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="Stocks fund tracker" />
+    <orderEntry type="module" module-name="Portfolio" />
   </component>
   <component name="PyDocumentationSettings">
     <option name="format" value="PLAIN" />

@@ -1,6 +1,8 @@
 # Pull base image
 FROM python:3.8
 
+EXPOSE 80
+
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
