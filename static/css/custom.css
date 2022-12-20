@@ -82,19 +82,6 @@ span.home-text {
     color: #90b4ce;
 }
 
-/*.container-fluid ul a::after{
-    display: block;
-    position: relative;
-    content: '';
-    border-bottom: solid 1.5px #3da9fc;
-    transform: scaleX(0);
-    transition: transform .25s ease-in-out;
-}
-
-.container-fluid ul a:hover::after {
-    transform: scaleX(1);
-}*/
-
 .container-fluid ul a img{
     position: relative;
     top: -3px;
@@ -225,3 +212,7 @@ span.tag {
 }
 
 /* END FORMS */
+
+/* TO DO LIST */
+
+/* END TO DO LIST */

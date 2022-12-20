@@ -130,3 +130,6 @@ class MyPostsView(LoginRequiredMixin, ListView):
         query = Article.objects.all()
         object_list = query.filter(author=self.request.user)
         return object_list
+
+class MyTodoApp(LoginRequiredMixin):
+    ...

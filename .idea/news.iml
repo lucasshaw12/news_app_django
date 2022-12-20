@@ -8,6 +8,8 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="Stocks fund tracker" />
     <orderEntry type="module" module-name="Portfolio" />
+    <orderEntry type="module" module-name="footballdata" />
+    <orderEntry type="module" module-name="wiki_scraper" />
   </component>
   <component name="PyDocumentationSettings">
     <option name="format" value="PLAIN" />
