@@ -10,6 +10,7 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
   web:
+    env_file: .env
     build: .
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
@@ -21,4 +22,16 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
     depends_on:
+      - db
+  db_admin:
+    image: dpage/pgadmin4:6.10
+    restart: always
+    ports:
+      - "5051:80"
+    depends_on:
+      - db
+    environment:
+      PGADMIN_DEFAULT_EMAIL: cts@pgadmin.com
+      PGADMIN_DEFAULT_PASSWORD: let-me-in
+    links:
       - db
