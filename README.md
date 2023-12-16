@@ -1,12 +1,3 @@
-Running the application
-
-Docker:
-Build
-docker-compose build
-Run 
-docker-compose up
-
-
 <!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
 <a name="readme-top"></a>
 <!--
@@ -28,11 +19,6 @@ docker-compose up
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 [![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
 
 
 
@@ -43,11 +29,7 @@ docker-compose up
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Best-README-Template</h3>
-
   <p align="center">
-    An awesome README template to jumpstart your projects!
-    <br />
     <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
     <br />
     <br />
@@ -66,7 +48,6 @@ docker-compose up
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#about-the-project">About The Project</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
       </ul>
@@ -104,8 +85,8 @@ Following the guidance from Django For Beginners by William S. Vincent. This sma
 
 This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
-* [![Python][python.org]][python-url]
-* [![Django][djangoproject.com]][django-url]
+* [![Python][Python.org]][Python-url]
+* [![Django][Djangoproject.com]][Django-url]
 * [![Bootstrap][Bootstrap.com]][Bootstrap-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -121,27 +102,36 @@ To get a local copy up and running follow these simple example steps.
 ### Prerequisites
 
 This is an example of how to list things you need to use the software and how to install them.
-* npm
+* gunicorn
   ```sh
-  npm install npm@latest -g
-  ```
+  pip3 install gunicorn
+* whitenoise
+  ```sh
+  pip3 install whitenoise
+* django-crispy-forms
+  ```sh
+  pip3 install django-crispy-forms  
 
 ### Installation
 
 _Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+
+1. Clone the repo
    ```sh
    git clone https://github.com/your_username_/Project-Name.git
    ```
-3. Install NPM packages
+2. Navigate into the project directory
    ```sh
-   npm install
+   cd news_app_django
    ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
+3. Build app using Docker (Ensure Docker Daemon is running)
+   ```sh
+   docker-compose build
+   ```
+4. Run using Docker
+   ```sh
+   docker-compose up
    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -151,9 +141,9 @@ _Below is an example of how you can instruct your audience on installing and set
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+~~Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.~~
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+~~For more examples, please refer to the [Documentation](https://example.com)~~
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -162,15 +152,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
-- [x] Add Changelog
-- [x] Add back to top links
-- [ ] Add Additional Templates w/ Examples
-- [ ] Add "components" document to easily copy & paste sections of the readme
-- [ ] Multi-language Support
-    - [ ] Chinese
-    - [ ] Spanish
-
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
+~~See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).~~
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -206,8 +188,6 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
-
 Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -238,5 +218,7 @@ Use this space to list resources you find helpful and would like to give credit 
 [contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
 [Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
 [Bootstrap-url]: https://getbootstrap.com
-[python-url]: https://python.org
+[Python-url]: https://python.org
+[Python.org]: https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54
 [django-url]: https://djangoproject.com
+[Djangoproject.com]: https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=green
