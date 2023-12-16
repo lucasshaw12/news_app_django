@@ -166,8 +166,11 @@ Sign up to create a user before you can interact with the application
 <!-- POTENTIAL ISSUES -->
 ## Potential Issues
 
-- Upon receiving _‘no_such_table’_ exception try running, this action creates tables for applications without migrations:
-python3 manage.py migrate --run-syncdb
+- Upon receiving a _‘no_such_table’_, this action creates tables for applications without migrations:
+
+  ```
+  python3 manage.py migrate --run-syncdb
+  ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
