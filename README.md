@@ -73,9 +73,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
-Following the guidance from Django For Beginners by William S. Vincent. This small project functions as an application for articles. With the ability to comment, add tags and use search filters to find content. We hope to develop and improve this application as a learning platform for those who love Python and Django and wish to make great web applications. 
+Following the guidance from [Django For Beginners by William S. Vincent](https://djangoforbeginners.com/introduction/). This small project functions as an application for articles. With the ability to comment, add tags and use search filters to find content. We hope to develop and improve this application as a learning platform for those who love Python and Django and wish to make great web applications. 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -85,9 +83,9 @@ Following the guidance from Django For Beginners by William S. Vincent. This sma
 
 This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
-* [![Python][Python.org]][Python-url]
-* [![Django][Djangoproject.com]][Django-url]
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
+[![Python][Python.org]][Python-url]
+[![Django][Djangoproject.com]][Django-url]
+[![Bootstrap][Bootstrap.com]][Bootstrap-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -146,6 +144,13 @@ Sign up to create a user before you can interact with the application
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- POTENTIAL ISSUES -->
+## Potential Issues
+
+- Upon receiving _‘no_such_table’_ exception try running, this action creates tables for applications without migrations:
+python3 manage.py migrate --run-syncdb
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 <!-- ROADMAP -->
@@ -190,7 +195,6 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 
 <!-- ACKNOWLEDGMENTS -->
