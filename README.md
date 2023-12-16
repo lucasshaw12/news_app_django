@@ -100,15 +100,34 @@ To get a local copy up and running follow these simple example steps.
 ### Prerequisites
 
 This is an example of how to list things you need to use the software and how to install them.
-* gunicorn
+* [gunicorn](https://pypi.org/project/gunicorn/)
   ```sh
   pip3 install gunicorn
-* whitenoise
+  ```
+* [whitenoise](https://pypi.org/project/whitenoise/)
   ```sh
   pip3 install whitenoise
-* django-crispy-forms
+  ```
+* [django-crispy-forms](https://pypi.org/project/django-crispy-forms/)
   ```sh
   pip3 install django-crispy-forms  
+  ```
+* [crispy-bootstrap](https://pypi.org/project/crispy-bootstrap5/)
+  ```sh
+  pip3 install crispy-bootstrap5  
+  ```
+* [django-taggit](https://pypi.org/project/django-taggit/)  
+  ```sh
+  pip3 install django-taggit
+  ```
+* [environs](https://pypi.org/project/environs/)
+  ```sh
+  pip3 install environs
+  ```  
+
+### .env
+
+Following the env.example file, create a local .env file and and copy the example contents into your .env file.
 
 ### Installation
 
